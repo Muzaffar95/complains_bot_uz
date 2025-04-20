@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Black">
+<<<<<<< HEAD
     <option name="sdkName" value="Python 3.12 (complaint_bot_uz2)" />
+=======
+    <option name="sdkName" value="Python 3.12 (complaint_bot_uz)" />
+>>>>>>> 58f2bd1d32367b36e6700cd99b9bf5e84899d5bf
   </component>
 </project>

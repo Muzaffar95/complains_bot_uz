@@ -5,9 +5,9 @@
     <title>Жалобы</title>
 </head>
 <body>
-    <h1>Список жалоб</h1>
+    <h1>Shikoyatlar ro'yxati</h1>
     <form method="get">
-        <input type="text" name="full_name" placeholder="ФИО" value="{{ full_name }}">
+        <input type="text" name="full_name" placeholder="F.I.SH." value="{{ full_name }}">
         <input type="date" name="date_from" value="{{ date_from }}">
         <input type="date" name="date_to" value="{{ date_to }}">
         <button type="submit">Фильтр</button>
@@ -15,7 +15,7 @@
     </form>
     <table border="1" cellpadding="5">
         <thead>
-            <tr><th>ID</th><th>ФИО</th><th>Телефон</th><th>Комментарий</th><th>Дата</th><th>PDF</th></tr>
+            <tr><th>ID</th><th>F.I.SH.</th><th>Telefon raqam</th><th>Izoh</th><th>Дата</th><th>PDF</th></tr>
         </thead>
         <tbody>
             {% for c in complaints %}

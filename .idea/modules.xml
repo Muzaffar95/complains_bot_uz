@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/complaint_bot_uz2.iml" filepath="$PROJECT_DIR$/.idea/complaint_bot_uz2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/complaint_bot_uz.iml" filepath="$PROJECT_DIR$/.idea/complaint_bot_uz.iml" />
+>>>>>>> 58f2bd1d32367b36e6700cd99b9bf5e84899d5bf
     </modules>
   </component>
 </project>
