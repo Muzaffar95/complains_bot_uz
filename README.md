@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 ---
 
 ## 🧪 PyCharm orqali lokal test
@@ -19,40 +19,46 @@ Docker Compose va nginx orqali SSL bilan joylashtiriladi.
 ## 🚀 Ishga tushurish
 
 ### 1. Klonlash yoki arxivni ochish
->>>>>>> 58f2bd1d32367b36e6700cd99b9bf5e84899d5bf
+>>>>>>> 
 
 ```bash
-pip install -r complaint_bot_project/requirements.txt
+pip install -r requirements.txt
 ```
 
-<<<<<<< HEAD
+
 4. `.env` faylini yarating(agar mavjud bo'lmasa) va quyidagilarni belgilang:
 
 ```env
-TELEGRAM_BOT_TOKEN=telegram_token
+TELEGRAM_BOT_TOKEN=YOUR_TOKEN
+
+ADMINS=123456789
+JWT_SECRET=supersecret123
+
+NOTIFY_CHAT_ID=-100260....(Telegram gruppa yoki kanal ID-si)
 ```
 
 5. Quyidagi faylni ishga tushiring:
 =======
-### 2. .env faylini sozlash
 
-`.env.example` asosida `.env` faylini yarating:
->>>>>>> 58f2bd1d32367b36e6700cd99b9bf5e84899d5bf
 
 ```bash
-python complaint_bot_project/main_polling.py
+python main_polling.py
 ```
 
-<<<<<<< HEAD
+ HEAD
 🔄 Bot `polling` rejimida ishga tushadi va webhook talab qilinmaydi.
-=======
+
+
+>>>>>>Serverda ishga tushirish<<<<<< 
+
+
 Quyidagilarni kiriting:
 
 - `TELEGRAM_BOT_TOKEN=telegram_bot_tokeningiz`
 - `WEBHOOK_URL=https://saytingiz.com/webhook`
 - `POSTGRES_*` — ma'lumotlar bazasiga ulanish
 
-### 3. Docker Compose orqali ishga tushirish
+### 3. Docker Compose orqali ishga tushirish(agar serverda bo'lsa)
 
 ```bash
 docker-compose up --build -d
@@ -92,4 +98,3 @@ curl -X POST https://saytingiz.com/token \
 
 ## 📞 Aloqa
 Muallif: 🧑‍💻 Muzaffar Abdulxamitov
->>>>>>> 58f2bd1d32367b36e6700cd99b9bf5e84899d5bf
