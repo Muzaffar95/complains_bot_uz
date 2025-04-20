@@ -12,35 +12,35 @@ FIO, TEL, COMMENT = range(3)
 
 # /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Добро пожаловать! Чтобы оставить жалобу, используйте команду /report.")
+    await update.message.reply_text("Xush kelibsiz! Shikoyat yuborish uchun /report buyrugʻini bering.")
 
 # /help
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
-        "Команды:\n/report - подать жалобу\n/FIO - ФИО\n/tel - номер телефона\n/comment - комментарий\n/accept - подтвердить"
+        "Buyruqlar:\n/report - подать жалобу\n/FIO - F.I.SH.\n/tel - номер телефона\n/comment - комментарий\n/accept - подтвердить"
     )
 
 # /report
 async def report(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Введите ваше ФИО:")
+    await update.message.reply_text("F.I.SH.ni kiriting:")
     return FIO
 
-# ФИО
+# F.I.SH.
 async def fio(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["fio"] = update.message.text
-    await update.message.reply_text("Введите номер телефона:")
+    await update.message.reply_text("Telefon raqamingizni kiriting:")
     return TEL
 
-# Телефон
+# Telefon
 async def tel(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["tel"] = update.message.text
-    await update.message.reply_text("Введите текст жалобы:")
+    await update.message.reply_text("Shikoyat matnini kiriting:")
     return COMMENT
 
-# Комментарий
+# Izoh
 async def comment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     context.user_data["comment"] = update.message.text
-    await update.message.reply_text("Для отправки жалобы введите /accept")
+    await update.message.reply_text("Shikoyatni yuborish uchun /accept buyrugʻini bering.")
     return ConversationHandler.END
 
 # /accept
@@ -70,11 +70,11 @@ async def accept(update: Update, context: ContextTypes.DEFAULT_TYPE):
     #await bot.send_message(
     #    chat_id=NOTIFY_CHAT_ID,
     #    text=(
-    #        f"<b>📬 Новая жалоба!</b>\n\n"
-    #        f"<b>ФИО:</b> {fio}\n"
-    #        f"<b>Телефон:</b> {tel}\n"
-    #        f"<b>Комментарий:</b> {comment}\n"
-    #        f"<a href='{pdf_url}'>📎 Открыть PDF</a>"
+    #        f"<b>📬 Yangi shikoyat!</b>\n\n"
+    #        f"<b>F.I.SH.:</b> {fio}\n"
+    #        f"<b>Telefon:</b> {tel}\n"
+    #        f"<b>Izoh:</b> {comment}\n"
+    #        f"<a href='{pdf_url}'>📎 PDF-ni ochish</a>"
     #    ),
     #    parse_mode="HTML"
     #)
@@ -92,28 +92,28 @@ async def accept(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await bot.send_message(
         chat_id=NOTIFY_CHAT_ID,
         text=(
-            f"📬 *Новая жалоба!*\n\n"
-            f"*ФИО:* {fio}\n"
-            f"*Телефон:* {tel}\n"
-            f"*Комментарий:* {comment}\n"
-            f"[📎 Открыть PDF]({pdf_url})"
+            f"📬 *Yangi shikoyat!*\n\n"
+            f"*F.I.SH.:* {fio}\n"
+            f"*Telefon:* {tel}\n"
+            f"*Izoh:* {comment}\n"
+            f"[📎 PDF-ni ochish]({pdf_url})"
         ),
         parse_mode="Markdown"
 )
 
 
 
-    await update.message.reply_text(f"PDF с жалобой сохранён: {pdf_file}")
-    await update.message.reply_text("Жалоба принята. Спасибо!")
+    await update.message.reply_text(f"Shikoyatning PDF fayli saqlandi: {pdf_file}")
+    await update.message.reply_text("Shikoyat qabul qilindi. Rahmat!")
 
 # Отмена
 async def cancel(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Жалоба отменена.", reply_markup=ReplyKeyboardRemove())
+    await update.message.reply_text("Shikoyat bekor qilindi.", reply_markup=ReplyKeyboardRemove())
     return ConversationHandler.END
 
 # Найти Telegram ID
 async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(f"🆔 Ваш Telegram ID: {update.effective_user.id}")
+    await update.message.reply_text(f"🆔 Sizning Telegram ID raqamingiz: {update.effective_user.id}")
 
 def setup_handlers(app):
     conv_handler = ConversationHandler(
